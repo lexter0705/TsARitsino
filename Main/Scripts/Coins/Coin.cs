@@ -9,6 +9,6 @@ namespace Main.Scripts.Coins
         
         public Level level => _level;
         
-        private void Start() => _level = FindFirstObjectByType<Level>();
+        private void Awake() => _level = FindFirstObjectByType<Level>();
     }
 }

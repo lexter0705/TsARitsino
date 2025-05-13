@@ -6,10 +6,7 @@ namespace Main.Scripts.Ui
     {
         private bool _isActive;
 
-        private void Awake()
-        {
-            _isActive = gameObject.activeSelf;
-        }
+        private void Awake() => _isActive = gameObject.activeSelf;
 
         public void SetActive()
         {

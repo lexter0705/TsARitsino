@@ -1,19 +1,15 @@
-using UnityEngine;
-
 namespace Main.Scripts.Coins
 {
     public class TsaritsinoCoin : Coin
     {
         private Counter _counter;
-
-        [SerializeField] private float distance;
-
+        
         private void Start() => _counter = FindFirstObjectByType<Counter>();
 
-        private void OnMouseDown()
+        private void OnMouseEnter()
         {
             _counter.Add();
-            level.DeleteCoin(this);
+            level.DeleteCoin(gameObject.GetComponent<TsaritsinoCoin>());
         }
     }
 }

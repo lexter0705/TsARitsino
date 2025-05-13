@@ -8,9 +8,6 @@ namespace Main.Scripts.Ui
 
         private void Start() => _activeSetter = FindFirstObjectByType<ActiveSetter>();
 
-        private void OnMouseOver()
-        {
-            _activeSetter.SetActive();
-        }
+        private void OnMouseOver() => _activeSetter.SetActive();
     }
 }

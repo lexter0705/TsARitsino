@@ -12,15 +12,20 @@ namespace Main.Scripts
         {
             _uiCountSetter = FindFirstObjectByType<CountSetter>();
             LoadFromMemory();
+            _uiCountSetter.SetTextToCount(_count);
         }
 
         private void LoadFromMemory()
         {
+            _count = PlayerPrefs.GetInt(nameof(_count));
+            if (_count == 0)
+                PlayerPrefs.SetInt(nameof(_count), 0);
         }
 
         public void Add()
         {
             _count++;
+            PlayerPrefs.SetInt(nameof(_count), _count);
             _uiCountSetter.SetTextToCount(_count);
         }
     }
